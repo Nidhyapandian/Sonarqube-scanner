@@ -1,6 +1,6 @@
 FROM nginx
-COPY . /usr/share/nginx/html
-RUN rm -rf 2136_kool_form_pack/index.html
-COPY 2136_kool_form_pack/index.html /usr/share/nginx/html/index.html
+WORKDIR /usr/share/nginx/html
+COPY . /usr/share/nginx/html/
+RUN rm -rf index.html
 EXPOSE 80
 CMD ["nginx","-g","daemon off;"]
